@@ -37,7 +37,7 @@
               <div class="form-group">
                 <input type="password" placeholder="Password" class="form-control">
               </div>
-              <button type="submit" class="btn btn-default" style="font-family:ubuntu">Sign in</button>
+              <button type="submit" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Signing in..." class="penandaku-btn-login btn btn-default" style="font-family:ubuntu">Sign in</button>
               <button type="submit" class="btn btn-success" style="font-family:ubuntu">Sign up</button>
             </form>
         </div>
@@ -51,9 +51,9 @@
         <a href=""><img class="img-responsive" src="assets/img/playstore.png"></a>
         </div>
         <div class="col-md-4">
-          <form action="" method="POST">
+          <form id="form-register" action="" method="POST">
             <div class="form-group">
-              <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama Anda." style="height:45px;font-size:16px;font-family:'ubuntu'">
+              <input type="text" name="nama" class="form-control" id="nama" placeholder="Masukan Nama Anda."  style="height:45px;font-size:16px;font-family:'ubuntu'">
             </div>
             <div class="form-group">
               <input type="text" name="username" class="form-control" id="username" placeholder="Masukan Username Anda." style="height:45px;font-size:16px;font-family:'ubuntu'">
@@ -122,6 +122,13 @@
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script>
       $('.penandaku-btn-register').on('click', function() {
+          var $this = $(this);
+              $this.button('loading');
+              setTimeout(function() {
+                $this.button('reset');
+              }, 800);
+      });
+      $('.penandaku-btn-login').on('click', function() {
           var $this = $(this);
               $this.button('loading');
               setTimeout(function() {
