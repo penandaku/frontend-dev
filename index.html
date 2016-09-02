@@ -65,7 +65,7 @@
               <input type="text" name="password" class="form-control" id="password" placeholder="Masukan Password Anda." style="height:45px;font-size:16px;font-family:'ubuntu'">
             </div>
 
-              <button type="submit" class="penandaku-btn-register btn btn-success btn-lg">Sign up for Penandaku.com</button>
+              <button type="submit" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Creating account..." class="penandaku-btn-register btn btn-success btn-lg">Sign up for Penandaku.com</button>
               <span class="penandaku-note-register text-center">
                 Dengan mengeklik "Sign up for Penandaku.com", berarti anda menyetujui
                 <a class="text-white" href="https://penandaku.com/terms" target="_blank">layanan</a> and
@@ -108,7 +108,7 @@
       </div>
 
       <div class="penandaku-batas"></div>
-      
+
       <div class="main-footer"></div>
       <hr style="margin-top:0px">
 
@@ -120,5 +120,14 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      $('.penandaku-btn-register').on('click', function() {
+          var $this = $(this);
+              $this.button('loading');
+              setTimeout(function() {
+                $this.button('reset');
+              }, 800);
+      });
+    </script>
   </body>
 </html>
