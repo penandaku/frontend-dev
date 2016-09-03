@@ -11,8 +11,6 @@ body {
     font-family: 'ubuntu';
     font-weight: initial;
     font-size: 15px;
-    padding-bottom: 5px;
-    padding-top: 5px;
 }
 
 .penandaku-logo {
@@ -117,4 +115,17 @@ body {
   background-color: transparent;;;
   border: 1px solid #ddd;
   border-left: 3px solid #66AE53;
+}
+
+.penandaku-author {
+  margin-top: -6px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+#loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
 }
